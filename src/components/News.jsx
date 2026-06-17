@@ -37,9 +37,10 @@ export default class News extends Component {
   }
 
  fetchNews = async (pageToken) => {
+  this.props.setProgress(0);
   this.setState({ loading: true });
 
-  let url = `https://newsdata.io/api/1/latest?apikey=pub_057cb5b51db24d70b3831078aeafed86&category=${this.props.category}&language=en&size=${this.props.pageSize}&country=${this.props.country}`;
+  let url = `https://newsdata.io/api/1/latest?apikey=${this.props.apikey}&category=${this.props.category}&language=en&size=${this.props.pageSize}&country=${this.props.country}`;
   if (pageToken) url += `&page=${pageToken}`;
 
   let data = await fetch(url);
@@ -52,10 +53,11 @@ export default class News extends Component {
     totalResults: parsedData.totalResults,
     loading: false
   });
+  this.props.setProgress(100);
 }
 
   fetchMoreData = async () => {
-    let url = `https://newsdata.io/api/1/latest?apikey=pub_057cb5b51db24d70b3831078aeafed86&category=${this.props.   category}&language=en&size=${this.props.pageSize}&country=${this.props.country}`;
+    let url = `https://newsdata.io/api/1/latest?apikey=${this.props.apikey}&category=${this.props.category}&language=en&size=${this.props.pageSize}&country=${this.props.country}`;
   
     if (this.state.nextPage) url += `&page=${this.state.nextPage}`;
 

@@ -15,7 +15,8 @@
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.6",
     "react-infinite-scroll-component": "^7.2.1",
-    "react-router-dom": "^7.17.0"
+    "react-router-dom": "^7.17.0",
+    "react-top-loading-bar": "^3.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
