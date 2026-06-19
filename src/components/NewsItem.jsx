@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export class NewsItem extends Component {
-
-  
-
-  render() {
-    let {title, description, imageUrl, newsId, newsUrl, source, date}= this.props;
+export default function NewsItem(props) {
+    let {title, description, imageUrl, newsId, newsUrl, source, date}= props;
     return (
       <div>
         <Card style={{margin: "10px"}}>
@@ -30,6 +26,3 @@ export class NewsItem extends Component {
       
     )
   }
-}
-
-export default NewsItem

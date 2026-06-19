@@ -7,11 +7,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-export default class Navbar1 extends Component {
-
-  render() {
+export default function Navbar1(){
     return (
-     <Navbar expand="lg" className="bg-dark navbar-dark">  
+     <Navbar expand="lg" className="fixed-top bg-dark navbar-dark">  
       <Container fluid>
         <Navbar.Brand href="/">NewsApp</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -49,4 +47,3 @@ export default class Navbar1 extends Component {
     </Navbar>
     )
   }
-}
